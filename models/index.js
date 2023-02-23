@@ -21,4 +21,5 @@ const sequelize = new Sequelize(
 
     //define semua models yg ada pada aplikasi
     db.quizzes = require('./quiz')(sequelize, Sequelize);
+    db.contents = require('./content')(sequelize, Sequelize);
     module.exports = db;
