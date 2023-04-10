@@ -18,6 +18,9 @@ module.exports = (sequelize, Sequelize) => {
         key: {
             type: Sequelize.STRING,
         },
+        category:{
+            type: Sequelize.STRING,
+        }
     });
     return Quiz;
 }

@@ -18,6 +18,22 @@ exports.create = async (req, res) => {
     }
 }
 
+//read get one
+exports.getOne = async(req, res) => {
+    try{
+        const contents = await Content.findOne()
+        res.json({
+            message: "Contents retrivied successfully.",
+            data: contents,
+        });
+    }catch(error){
+        res.status(500).json({
+            message: error.message,
+            data: null,
+        });
+    }
+};
+
 //READ: menampilkan atau mengambil semua data sesuai model dari DB | GET ALL Content
 exports.getAll = async(req, res) => {
     try{
@@ -79,13 +95,13 @@ exports.delete = async(req,res)=> {
 exports.findOne = async (req, res) => {
     const id = req.params.id
     try{
-        const Content = await Content.findByPk(id, { rejectOnEmpty:true})
+        const data = await Content.findByPk(id, { rejectOnEmpty:true})
         res.json({
             message: `Content retrieved successfully with id=${id}.`,
-            data: Content,
+            data: data,
         });
     }catch(error){
-        req.status(500).json({
+        res.status(500).json({
             message: error.message || "Some error occured while retrieving Content",
             data: null,
         });

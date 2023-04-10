@@ -82,7 +82,7 @@ exports.findOne = async (req, res) => {
     try{
         const quiz = await Quiz.findByPk(id, { rejectOnEmpty:true})
         res.json({
-            message: `Quizzes retrieved successfully with id=${id}.`,
+            message: `Quizzes retrieved successfully with id =${id}.`,
             data: quiz,
         });
     }catch(error){

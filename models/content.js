@@ -1,17 +1,20 @@
 module.exports = (sequelize, Sequelize) => {
-    const Content = sequelize.define('content',{
-        materi:{
+    const Contents = sequelize.define('content',{
+        title:{
             type: Sequelize.STRING,
         },
-        pengertian:{
+        subtitle1:{
             type: Sequelize.STRING,
         },
-        ciri_ciri:{
+        content1:{
             type: Sequelize.STRING,
         },
-        jenis:{
+        subtitle2:{
+            type: Sequelize.STRING,
+        },
+        content2:{
             type: Sequelize.STRING,
         },
     });
-    return Content;
+    return Contents;
 }
